@@ -1,338 +1,516 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3600" viewBox="0 0 2400 3600">
+<svg xmlns="http://www.w3.org/2000/svg" width="2800" height="3800" viewBox="0 0 2800 3800">
   <defs>
     <style>
-      .title { font-size: 48px; font-weight: bold; fill: #1a1a1a; }
-      .subtitle { font-size: 32px; fill: #333; font-weight: bold; }
-      .label-major { font-size: 28px; fill: #000; font-weight: bold; }
-      .label-coord { font-size: 20px; fill: #0066cc; font-weight: bold; }
-      .label-cell { font-size: 24px; fill: #fff; font-weight: bold; }
-      .label-distance { font-size: 18px; fill: #ff6600; font-weight: bold; }
+      .title { font-size: 52px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-size: 36px; fill: #333; font-weight: bold; }
+      .axis-label { font-size: 32px; fill: #000; font-weight: bold; }
+      .tick-label { font-size: 22px; fill: #333; font-weight: bold; }
+      .label-cell { font-size: 20px; fill: #fff; font-weight: bold; }
+      .label-coord { font-size: 16px; fill: #0066cc; font-weight: bold; }
       .grid-cell { fill: #e8f4f8; stroke: #2c5aa0; stroke-width: 2; }
       .grid-cell-zona-a { fill: #c8e6c9; stroke: #2e7d32; stroke-width: 2; }
       .grid-cell-zona-b { fill: #ffe0b2; stroke: #ef6c00; stroke-width: 2; }
-      .axis-line { stroke: #333; stroke-width: 3; }
-      .grid-line { stroke: #ccc; stroke-width: 1; stroke-dasharray: 5,5; }
-      .dimension-line { stroke: #ff6600; stroke-width: 2; }
-      .dimension-arrow { fill: #ff6600; }
-      .info-box { fill: #f0f0f0; stroke: #333; stroke-width: 2; }
-      .info-text { font-size: 20px; fill: #000; }
+      .axis-line { stroke: #000; stroke-width: 4; fill: none; }
+      .grid-line-major { stroke: #999; stroke-width: 2; stroke-dasharray: 0; }
+      .grid-line-minor { stroke: #ddd; stroke-width: 1; stroke-dasharray: 5,5; }
+      .arrow { fill: #000; }
+      .info-box { fill: #f5f5f5; stroke: #333; stroke-width: 2; }
+      .info-text { font-size: 18px; fill: #000; }
+      .legend-box { fill: #fff; stroke: #333; stroke-width: 2; }
+      .home-marker { fill: #ff0000; stroke: #8b0000; stroke-width: 2; }
     </style>
   </defs>
 
   <!-- Background -->
-  <rect width="2400" height="3600" fill="#ffffff"/>
+  <rect width="2800" height="3800" fill="#ffffff"/>
 
-  <!-- Title -->
-  <text x="1200" y="60" text-anchor="middle" class="title">PETA KOORDINAT PENYIRAMAN GANTRY OTOMATIS</text>
-  <text x="1200" y="110" text-anchor="middle" class="subtitle">SICS Gantry Watering V2.0 - Grid 6×8 (48 Titik)</text>
+  <!-- Title Section -->
+  <text x="1400" y="60" text-anchor="middle" class="title">PETA KOORDINAT KARTESIUS - SISTEM PENYIRAMAN GANTRY</text>
+  <text x="1400" y="110" text-anchor="middle" class="subtitle">Grid 6×8 dengan Sumbu X-Y (Pengukuran dalam STEPS)</text>
 
-  <!-- SECTION 1: Grid Map with Coordinates -->
-  <g id="grid-section">
-    <!-- Left margin for row labels -->
-    <text x="40" y="250" class="label-major">BARIS</text>
+  <!-- MAIN GRAPH SECTION -->
+  <g id="cartesian-graph" transform="translate(250, 180)">
+    
+    <!-- Draw Grid Lines (Minor) -->
+    <!-- Vertical grid lines for X axis (every 153 steps) -->
+    <line x1="0" y1="0" x2="0" y2="1890" class="grid-line-minor"/>
+    <line x1="50" y1="0" x2="50" y2="1890" class="grid-line-minor"/>
+    <line x1="100" y1="0" x2="100" y2="1890" class="grid-line-minor"/>
+    <line x1="150" y1="0" x2="150" y2="1890" class="grid-line-minor"/>
+    <line x1="200" y1="0" x2="200" y2="1890" class="grid-line-minor"/>
+    <line x1="250" y1="0" x2="250" y2="1890" class="grid-line-minor"/>
+    <line x1="300" y1="0" x2="300" y2="1890" class="grid-line-minor"/>
+    <line x1="350" y1="0" x2="350" y2="1890" class="grid-line-minor"/>
+    <line x1="400" y1="0" x2="400" y2="1890" class="grid-line-minor"/>
+    <line x1="450" y1="0" x2="450" y2="1890" class="grid-line-minor"/>
+    <line x1="500" y1="0" x2="500" y2="1890" class="grid-line-minor"/>
+    <line x1="550" y1="0" x2="550" y2="1890" class="grid-line-minor"/>
 
-    <!-- Row Labels (H to A from top to bottom) -->
-    <text x="80" y="615" text-anchor="end" class="label-major">H</text>
-    <text x="80" y="885" text-anchor="end" class="label-major">G</text>
-    <text x="80" y="1155" text-anchor="end" class="label-major">F</text>
-    <text x="80" y="1425" text-anchor="end" class="label-major">E</text>
-    <text x="80" y="1695" text-anchor="end" class="label-major">D</text>
-    <text x="80" y="1965" text-anchor="end" class="label-major">C</text>
-    <text x="80" y="2235" text-anchor="end" class="label-major">B</text>
-    <text x="80" y="2505" text-anchor="end" class="label-major">A</text>
+    <!-- Horizontal grid lines for Y axis (every 270 steps approx) -->
+    <line x1="0" y1="0" x2="550" y2="0" class="grid-line-minor"/>
+    <line x1="0" y1="135" x2="550" y2="135" class="grid-line-minor"/>
+    <line x1="0" y1="270" x2="550" y2="270" class="grid-line-minor"/>
+    <line x1="0" y1="405" x2="550" y2="405" class="grid-line-minor"/>
+    <line x1="0" y1="540" x2="550" y2="540" class="grid-line-minor"/>
+    <line x1="0" y1="675" x2="550" y2="675" class="grid-line-minor"/>
+    <line x1="0" y1="810" x2="550" y2="810" class="grid-line-minor"/>
+    <line x1="0" y1="945" x2="550" y2="945" class="grid-line-minor"/>
+    <line x1="0" y1="1080" x2="550" y2="1080" class="grid-line-minor"/>
+    <line x1="0" y1="1215" x2="550" y2="1215" class="grid-line-minor"/>
+    <line x1="0" y1="1350" x2="550" y2="1350" class="grid-line-minor"/>
+    <line x1="0" y1="1485" x2="550" y2="1485" class="grid-line-minor"/>
+    <line x1="0" y1="1620" x2="550" y2="1620" class="grid-line-minor"/>
+    <line x1="0" y1="1755" x2="550" y2="1755" class="grid-line-minor"/>
+    <line x1="0" y1="1890" x2="550" y2="1890" class="grid-line-minor"/>
 
-    <!-- Column Labels (1 to 6) -->
-    <text x="200" y="2650" text-anchor="middle" class="label-major">1</text>
-    <text x="470" y="2650" text-anchor="middle" class="label-major">2</text>
-    <text x="740" y="2650" text-anchor="middle" class="label-major">3</text>
-    <text x="1010" y="2650" text-anchor="middle" class="label-major">4</text>
-    <text x="1280" y="2650" text-anchor="middle" class="label-major">5</text>
-    <text x="1550" y="2650" text-anchor="middle" class="label-major">6</text>
+    <!-- Draw Major Grid Lines every 153 steps X and 303 steps Y -->
+    <!-- Major X lines -->
+    <line x1="0" y1="0" x2="0" y2="1890" class="grid-line-major"/>
+    <line x1="50" y1="0" x2="50" y2="1890" class="grid-line-major"/>
+    <line x1="100" y1="0" x2="100" y2="1890" class="grid-line-major"/>
+    <line x1="150" y1="0" x2="150" y2="1890" class="grid-line-major"/>
+    <line x1="200" y1="0" x2="200" y2="1890" class="grid-line-major"/>
+    <line x1="250" y1="0" x2="250" y2="1890" class="grid-line-major"/>
+    <line x1="300" y1="0" x2="300" y2="1890" class="grid-line-major"/>
+    <line x1="350" y1="0" x2="350" y2="1890" class="grid-line-major"/>
+    <line x1="400" y1="0" x2="400" y2="1890" class="grid-line-major"/>
+    <line x1="450" y1="0" x2="450" y2="1890" class="grid-line-major"/>
+    <line x1="500" y1="0" x2="500" y2="1890" class="grid-line-major"/>
+    <line x1="550" y1="0" x2="550" y2="1890" class="grid-line-major"/>
 
-    <text x="875" y="2710" text-anchor="middle" class="label-major">KOLOM</text>
+    <!-- Major Y lines -->
+    <line x1="0" y1="0" x2="550" y2="0" class="grid-line-major"/>
+    <line x1="0" y1="135" x2="550" y2="135" class="grid-line-major"/>
+    <line x1="0" y1="270" x2="550" y2="270" class="grid-line-major"/>
+    <line x1="0" y1="405" x2="550" y2="405" class="grid-line-major"/>
+    <line x1="0" y1="540" x2="550" y2="540" class="grid-line-major"/>
+    <line x1="0" y1="675" x2="550" y2="675" class="grid-line-major"/>
+    <line x1="0" y1="810" x2="550" y2="810" class="grid-line-major"/>
+    <line x1="0" y1="945" x2="550" y2="945" class="grid-line-major"/>
+    <line x1="0" y1="1080" x2="550" y2="1080" class="grid-line-major"/>
+    <line x1="0" y1="1215" x2="550" y2="1215" class="grid-line-major"/>
+    <line x1="0" y1="1350" x2="550" y2="1350" class="grid-line-major"/>
+    <line x1="0" y1="1485" x2="550" y2="1485" class="grid-line-major"/>
+    <line x1="0" y1="1620" x2="550" y2="1620" class="grid-line-major"/>
+    <line x1="0" y1="1755" x2="550" y2="1755" class="grid-line-major"/>
+    <line x1="0" y1="1890" x2="550" y2="1890" class="grid-line-major"/>
 
-    <!-- Zona A Label (Top Green) -->
-    <text x="1850" y="620" class="label-major" fill="#2e7d32">ZONA A</text>
-    <text x="1850" y="660" class="info-text" fill="#2e7d32">(Baris G-H)</text>
+    <!-- Draw Axis Lines (X and Y) -->
+    <!-- Y Axis (Vertical) -->
+    <line x1="0" y1="0" x2="0" y2="1890" class="axis-line"/>
+    <!-- Arrow for Y Axis -->
+    <polygon points="0,1900 -15,1875 15,1875" class="arrow"/>
 
-    <!-- Zona B Label (Bottom Orange) -->
-    <text x="1850" y="2000" class="label-major" fill="#ef6c00">ZONA B</text>
-    <text x="1850" y="2040" class="info-text" fill="#ef6c00">(Baris A-D)</text>
+    <!-- X Axis (Horizontal) -->
+    <line x1="0" y1="1890" x2="550" y2="1890" class="axis-line"/>
+    <!-- Arrow for X Axis -->
+    <polygon points="560,1890 535,1875 535,1905" class="arrow"/>
 
-    <!-- Grid Cells with Coordinates - Row H (Y=0) -->
-    <rect x="150" y="550" width="260" height="130" class="grid-cell"/>
-    <text x="280" y="605" text-anchor="middle" class="label-cell">H1</text>
-    <text x="280" y="645" text-anchor="middle" class="label-coord" font-size="16">0,0</text>
+    <!-- X Axis Ticks and Labels (0, 153, 307, 460, 614, 767) -->
+    <line x1="0" y1="1890" x2="0" y2="1920" stroke="#000" stroke-width="2"/>
+    <text x="0" y="1960" text-anchor="middle" class="tick-label">0</text>
 
-    <rect x="420" y="550" width="260" height="130" class="grid-cell"/>
-    <text x="550" y="605" text-anchor="middle" class="label-cell">H2</text>
-    <text x="550" y="645" text-anchor="middle" class="label-coord" font-size="16">153,0</text>
+    <line x1="50" y1="1890" x2="50" y2="1920" stroke="#000" stroke-width="2"/>
+    <text x="50" y="1960" text-anchor="middle" class="tick-label">153</text>
 
-    <rect x="690" y="550" width="260" height="130" class="grid-cell"/>
-    <text x="820" y="605" text-anchor="middle" class="label-cell">H3</text>
-    <text x="820" y="645" text-anchor="middle" class="label-coord" font-size="16">307,0</text>
+    <line x1="100" y1="1890" x2="100" y2="1920" stroke="#000" stroke-width="2"/>
+    <text x="100" y="1960" text-anchor="middle" class="tick-label">307</text>
 
-    <rect x="960" y="550" width="260" height="130" class="grid-cell"/>
-    <text x="1090" y="605" text-anchor="middle" class="label-cell">H4</text>
-    <text x="1090" y="645" text-anchor="middle" class="label-coord" font-size="16">460,0</text>
+    <line x1="150" y1="1890" x2="150" y2="1920" stroke="#000" stroke-width="2"/>
+    <text x="150" y="1960" text-anchor="middle" class="tick-label">460</text>
 
-    <rect x="1230" y="550" width="260" height="130" class="grid-cell"/>
-    <text x="1360" y="605" text-anchor="middle" class="label-cell">H5</text>
-    <text x="1360" y="645" text-anchor="middle" class="label-coord" font-size="16">614,0</text>
+    <line x1="200" y1="1890" x2="200" y2="1920" stroke="#000" stroke-width="2"/>
+    <text x="200" y="1960" text-anchor="middle" class="tick-label">614</text>
 
-    <rect x="1500" y="550" width="260" height="130" class="grid-cell"/>
-    <text x="1630" y="605" text-anchor="middle" class="label-cell">H6</text>
-    <text x="1630" y="645" text-anchor="middle" class="label-coord" font-size="16">767,0</text>
+    <line x1="250" y1="1890" x2="250" y2="1920" stroke="#000" stroke-width="2"/>
+    <text x="250" y="1960" text-anchor="middle" class="tick-label">767</text>
 
-    <!-- Grid Cells - Row G (Y=303) ZONA A -->
-    <rect x="150" y="820" width="260" height="130" class="grid-cell-zona-a"/>
-    <text x="280" y="875" text-anchor="middle" class="label-cell">G1</text>
-    <text x="280" y="915" text-anchor="middle" class="label-coord" font-size="16">0,303</text>
+    <!-- Y Axis Ticks and Labels (0, 303, 605, 908, 1210, 1512, 1815, 2118) -->
+    <line x1="0" y1="1890" x2="-30" y2="1890" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="1900" text-anchor="end" class="tick-label">0</text>
 
-    <rect x="420" y="820" width="260" height="130" class="grid-cell-zona-a"/>
-    <text x="550" y="875" text-anchor="middle" class="label-cell">G2</text>
-    <text x="550" y="915" text-anchor="middle" class="label-coord" font-size="16">153,303</text>
+    <line x1="0" y1="1755" x2="-30" y2="1755" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="1765" text-anchor="end" class="tick-label">303</text>
 
-    <rect x="690" y="820" width="260" height="130" class="grid-cell-zona-a"/>
-    <text x="820" y="875" text-anchor="middle" class="label-cell">G3</text>
-    <text x="820" y="915" text-anchor="middle" class="label-coord" font-size="16">307,303</text>
+    <line x1="0" y1="1620" x2="-30" y2="1620" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="1630" text-anchor="end" class="tick-label">605</text>
 
-    <rect x="960" y="820" width="260" height="130" class="grid-cell-zona-a"/>
-    <text x="1090" y="875" text-anchor="middle" class="label-cell">G4</text>
-    <text x="1090" y="915" text-anchor="middle" class="label-coord" font-size="16">460,303</text>
+    <line x1="0" y1="1485" x2="-30" y2="1485" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="1495" text-anchor="end" class="tick-label">908</text>
 
-    <rect x="1230" y="820" width="260" height="130" class="grid-cell-zona-a"/>
-    <text x="1360" y="875" text-anchor="middle" class="label-cell">G5</text>
-    <text x="1360" y="915" text-anchor="middle" class="label-coord" font-size="16">614,303</text>
+    <line x1="0" y1="1350" x2="-30" y2="1350" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="1360" text-anchor="end" class="tick-label">1210</text>
 
-    <rect x="1500" y="820" width="260" height="130" class="grid-cell-zona-a"/>
-    <text x="1630" y="875" text-anchor="middle" class="label-cell">G6</text>
-    <text x="1630" y="915" text-anchor="middle" class="label-coord" font-size="16">767,303</text>
+    <line x1="0" y1="1215" x2="-30" y2="1215" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="1225" text-anchor="end" class="tick-label">1512</text>
 
-    <!-- Grid Cells - Row F (Y=605) -->
-    <rect x="150" y="1090" width="260" height="130" class="grid-cell"/>
-    <text x="280" y="1145" text-anchor="middle" class="label-cell">F1</text>
-    <text x="280" y="1185" text-anchor="middle" class="label-coord" font-size="16">0,605</text>
+    <line x1="0" y1="1080" x2="-30" y2="1080" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="1090" text-anchor="end" class="tick-label">1815</text>
 
-    <rect x="420" y="1090" width="260" height="130" class="grid-cell"/>
-    <text x="550" y="1145" text-anchor="middle" class="label-cell">F2</text>
-    <text x="550" y="1185" text-anchor="middle" class="label-coord" font-size="16">153,605</text>
+    <line x1="0" y1="0" x2="-30" y2="0" stroke="#000" stroke-width="2"/>
+    <text x="-50" y="10" text-anchor="end" class="tick-label">2118</text>
 
-    <rect x="690" y="1090" width="260" height="130" class="grid-cell"/>
-    <text x="820" y="1145" text-anchor="middle" class="label-cell">F3</text>
-    <text x="820" y="1185" text-anchor="middle" class="label-coord" font-size="16">307,605</text>
+    <!-- Axis Labels -->
+    <text x="575" y="1920" class="axis-label" fill="#000">X (steps)</text>
+    <text x="-150" y="30" class="axis-label" fill="#000">Y (steps)</text>
 
-    <rect x="960" y="1090" width="260" height="130" class="grid-cell"/>
-    <text x="1090" y="1145" text-anchor="middle" class="label-cell">F4</text>
-    <text x="1090" y="1185" text-anchor="middle" class="label-coord" font-size="16">460,605</text>
+    <!-- Plot Points for All 48 Cells -->
+    <!-- Row H (Y=1890, Baris H y-offset=0) -->
+    <!-- H1 (0, 0) -->
+    <circle cx="0" cy="1890" r="18" class="home-marker"/>
+    <text x="0" y="1880" text-anchor="middle" class="label-cell" font-size="14" fill="#000">H1</text>
+    <text x="0" y="1875" text-anchor="middle" class="label-coord" font-size="12">HOME</text>
 
-    <rect x="1230" y="1090" width="260" height="130" class="grid-cell"/>
-    <text x="1360" y="1145" text-anchor="middle" class="label-cell">F5</text>
-    <text x="1360" y="1185" text-anchor="middle" class="label-coord" font-size="16">614,605</text>
+    <!-- H2 (153, 0) -->
+    <circle cx="50" cy="1890" r="15" class="grid-cell-zona-a" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="50" y="1900" text-anchor="middle" class="info-text" font-size="12">H2</text>
 
-    <rect x="1500" y="1090" width="260" height="130" class="grid-cell"/>
-    <text x="1630" y="1145" text-anchor="middle" class="label-cell">F6</text>
-    <text x="1630" y="1185" text-anchor="middle" class="label-coord" font-size="16">767,605</text>
+    <!-- H3 (307, 0) -->
+    <circle cx="100" cy="1890" r="15" class="grid-cell-zona-a" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="100" y="1900" text-anchor="middle" class="info-text" font-size="12">H3</text>
 
-    <!-- Grid Cells - Row E (Y=908) -->
-    <rect x="150" y="1360" width="260" height="130" class="grid-cell"/>
-    <text x="280" y="1415" text-anchor="middle" class="label-cell">E1</text>
-    <text x="280" y="1455" text-anchor="middle" class="label-coord" font-size="16">0,908</text>
+    <!-- H4 (460, 0) -->
+    <circle cx="150" cy="1890" r="15" class="grid-cell-zona-a" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="150" y="1900" text-anchor="middle" class="info-text" font-size="12">H4</text>
 
-    <rect x="420" y="1360" width="260" height="130" class="grid-cell"/>
-    <text x="550" y="1415" text-anchor="middle" class="label-cell">E2</text>
-    <text x="550" y="1455" text-anchor="middle" class="label-coord" font-size="16">153,908</text>
+    <!-- H5 (614, 0) -->
+    <circle cx="200" cy="1890" r="15" class="grid-cell-zona-a" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="200" y="1900" text-anchor="middle" class="info-text" font-size="12">H5</text>
 
-    <rect x="690" y="1360" width="260" height="130" class="grid-cell"/>
-    <text x="820" y="1415" text-anchor="middle" class="label-cell">E3</text>
-    <text x="820" y="1455" text-anchor="middle" class="label-coord" font-size="16">307,908</text>
+    <!-- H6 (767, 0) -->
+    <circle cx="250" cy="1890" r="15" class="grid-cell-zona-a" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="250" y="1900" text-anchor="middle" class="info-text" font-size="12">H6</text>
 
-    <rect x="960" y="1360" width="260" height="130" class="grid-cell"/>
-    <text x="1090" y="1415" text-anchor="middle" class="label-cell">E4</text>
-    <text x="1090" y="1455" text-anchor="middle" class="label-coord" font-size="16">460,908</text>
+    <!-- Row G (Y=1755, offset dari H = 303) - ZONA A -->
+    <!-- G1 (0, 303) -->
+    <circle cx="0" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="0" y="1765" text-anchor="middle" class="info-text" font-size="12">G1</text>
 
-    <rect x="1230" y="1360" width="260" height="130" class="grid-cell"/>
-    <text x="1360" y="1415" text-anchor="middle" class="label-cell">E5</text>
-    <text x="1360" y="1455" text-anchor="middle" class="label-coord" font-size="16">614,908</text>
+    <!-- G2 (153, 303) -->
+    <circle cx="50" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="50" y="1765" text-anchor="middle" class="info-text" font-size="12">G2</text>
 
-    <rect x="1500" y="1360" width="260" height="130" class="grid-cell"/>
-    <text x="1630" y="1415" text-anchor="middle" class="label-cell">E6</text>
-    <text x="1630" y="1455" text-anchor="middle" class="label-coord" font-size="16">767,908</text>
+    <!-- G3 (307, 303) -->
+    <circle cx="100" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="100" y="1765" text-anchor="middle" class="info-text" font-size="12">G3</text>
 
-    <!-- Grid Cells - Row D (Y=1210) ZONA B -->
-    <rect x="150" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="280" y="1685" text-anchor="middle" class="label-cell">D1</text>
-    <text x="280" y="1725" text-anchor="middle" class="label-coord" font-size="16">0,1210</text>
+    <!-- G4 (460, 303) -->
+    <circle cx="150" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="150" y="1765" text-anchor="middle" class="info-text" font-size="12">G4</text>
 
-    <rect x="420" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="550" y="1685" text-anchor="middle" class="label-cell">D2</text>
-    <text x="550" y="1725" text-anchor="middle" class="label-coord" font-size="16">153,1210</text>
+    <!-- G5 (614, 303) -->
+    <circle cx="200" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="200" y="1765" text-anchor="middle" class="info-text" font-size="12">G5</text>
 
-    <rect x="690" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="820" y="1685" text-anchor="middle" class="label-cell">D3</text>
-    <text x="820" y="1725" text-anchor="middle" class="label-coord" font-size="16">307,1210</text>
+    <!-- G6 (767, 303) -->
+    <circle cx="250" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="250" y="1765" text-anchor="middle" class="info-text" font-size="12">G6</text>
 
-    <rect x="960" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1090" y="1685" text-anchor="middle" class="label-cell">D4</text>
-    <text x="1090" y="1725" text-anchor="middle" class="label-coord" font-size="16">460,1210</text>
+    <!-- Row F (Y=1620, offset dari H = 605) -->
+    <!-- F1 (0, 605) -->
+    <circle cx="0" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="0" y="1630" text-anchor="middle" class="info-text" font-size="12">F1</text>
 
-    <rect x="1230" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1360" y="1685" text-anchor="middle" class="label-cell">D5</text>
-    <text x="1360" y="1725" text-anchor="middle" class="label-coord" font-size="16">614,1210</text>
+    <!-- F2-F6 -->
+    <circle cx="50" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="50" y="1630" text-anchor="middle" class="info-text" font-size="12">F2</text>
 
-    <rect x="1500" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1630" y="1685" text-anchor="middle" class="label-cell">D6</text>
-    <text x="1630" y="1725" text-anchor="middle" class="label-coord" font-size="16">767,1210</text>
+    <circle cx="100" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="100" y="1630" text-anchor="middle" class="info-text" font-size="12">F3</text>
 
-    <!-- Grid Cells - Row C (Y=1512) ZONA B -->
-    <rect x="150" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="280" y="1955" text-anchor="middle" class="label-cell">C1</text>
-    <text x="280" y="1995" text-anchor="middle" class="label-coord" font-size="16">0,1512</text>
+    <circle cx="150" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="150" y="1630" text-anchor="middle" class="info-text" font-size="12">F4</text>
 
-    <rect x="420" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="550" y="1955" text-anchor="middle" class="label-cell">C2</text>
-    <text x="550" y="1995" text-anchor="middle" class="label-coord" font-size="16">153,1512</text>
+    <circle cx="200" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="200" y="1630" text-anchor="middle" class="info-text" font-size="12">F5</text>
 
-    <rect x="690" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="820" y="1955" text-anchor="middle" class="label-cell">C3</text>
-    <text x="820" y="1995" text-anchor="middle" class="label-coord" font-size="16">307,1512</text>
+    <circle cx="250" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="250" y="1630" text-anchor="middle" class="info-text" font-size="12">F6</text>
 
-    <rect x="960" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1090" y="1955" text-anchor="middle" class="label-cell">C4</text>
-    <text x="1090" y="1995" text-anchor="middle" class="label-coord" font-size="16">460,1512</text>
+    <!-- Row E (Y=1485, offset dari H = 908) -->
+    <circle cx="0" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="0" y="1495" text-anchor="middle" class="info-text" font-size="12">E1</text>
 
-    <rect x="1230" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1360" y="1955" text-anchor="middle" class="label-cell">C5</text>
-    <text x="1360" y="1995" text-anchor="middle" class="label-coord" font-size="16">614,1512</text>
+    <circle cx="50" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="50" y="1495" text-anchor="middle" class="info-text" font-size="12">E2</text>
 
-    <rect x="1500" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1630" y="1955" text-anchor="middle" class="label-cell">C6</text>
-    <text x="1630" y="1995" text-anchor="middle" class="label-coord" font-size="16">767,1512</text>
+    <circle cx="100" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="100" y="1495" text-anchor="middle" class="info-text" font-size="12">E3</text>
 
-    <!-- Grid Cells - Row B (Y=1815) ZONA B -->
-    <rect x="150" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="280" y="2225" text-anchor="middle" class="label-cell">B1</text>
-    <text x="280" y="2265" text-anchor="middle" class="label-coord" font-size="16">0,1815</text>
+    <circle cx="150" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="150" y="1495" text-anchor="middle" class="info-text" font-size="12">E4</text>
 
-    <rect x="420" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="550" y="2225" text-anchor="middle" class="label-cell">B2</text>
-    <text x="550" y="2265" text-anchor="middle" class="label-coord" font-size="16">153,1815</text>
+    <circle cx="200" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="200" y="1495" text-anchor="middle" class="info-text" font-size="12">E5</text>
 
-    <rect x="690" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="820" y="2225" text-anchor="middle" class="label-cell">B3</text>
-    <text x="820" y="2265" text-anchor="middle" class="label-coord" font-size="16">307,1815</text>
+    <circle cx="250" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="250" y="1495" text-anchor="middle" class="info-text" font-size="12">E6</text>
 
-    <rect x="960" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1090" y="2225" text-anchor="middle" class="label-cell">B4</text>
-    <text x="1090" y="2265" text-anchor="middle" class="label-coord" font-size="16">460,1815</text>
+    <!-- Row D (Y=1350, offset dari H = 1210) - ZONA B -->
+    <circle cx="0" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="0" y="1360" text-anchor="middle" class="info-text" font-size="12">D1</text>
 
-    <rect x="1230" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1360" y="2225" text-anchor="middle" class="label-cell">B5</text>
-    <text x="1360" y="2265" text-anchor="middle" class="label-coord" font-size="16">614,1815</text>
+    <circle cx="50" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="50" y="1360" text-anchor="middle" class="info-text" font-size="12">D2</text>
 
-    <rect x="1500" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1630" y="2225" text-anchor="middle" class="label-cell">B6</text>
-    <text x="1630" y="2265" text-anchor="middle" class="label-coord" font-size="16">767,1815</text>
+    <circle cx="100" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="100" y="1360" text-anchor="middle" class="info-text" font-size="12">D3</text>
 
-    <!-- Grid Cells - Row A (Y=2118) ZONA B -->
-    <rect x="150" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="280" y="2495" text-anchor="middle" class="label-cell">A1</text>
-    <text x="280" y="2535" text-anchor="middle" class="label-coord" font-size="16">0,2118</text>
+    <circle cx="150" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="150" y="1360" text-anchor="middle" class="info-text" font-size="12">D4</text>
 
-    <rect x="420" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="550" y="2495" text-anchor="middle" class="label-cell">A2</text>
-    <text x="550" y="2535" text-anchor="middle" class="label-coord" font-size="16">153,2118</text>
+    <circle cx="200" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="200" y="1360" text-anchor="middle" class="info-text" font-size="12">D5</text>
 
-    <rect x="690" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="820" y="2495" text-anchor="middle" class="label-cell">A3</text>
-    <text x="820" y="2535" text-anchor="middle" class="label-coord" font-size="16">307,2118</text>
+    <circle cx="250" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="250" y="1360" text-anchor="middle" class="info-text" font-size="12">D6</text>
 
-    <rect x="960" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1090" y="2495" text-anchor="middle" class="label-cell">A4</text>
-    <text x="1090" y="2535" text-anchor="middle" class="label-coord" font-size="16">460,2118</text>
+    <!-- Row C (Y=1215, offset dari H = 1512) - ZONA B -->
+    <circle cx="0" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="0" y="1225" text-anchor="middle" class="info-text" font-size="12">C1</text>
 
-    <rect x="1230" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1360" y="2495" text-anchor="middle" class="label-cell">A5</text>
-    <text x="1360" y="2535" text-anchor="middle" class="label-coord" font-size="16">614,2118</text>
+    <circle cx="50" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="50" y="1225" text-anchor="middle" class="info-text" font-size="12">C2</text>
 
-    <rect x="1500" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
-    <text x="1630" y="2495" text-anchor="middle" class="label-cell">A6</text>
-    <text x="1630" y="2535" text-anchor="middle" class="label-coord" font-size="16">767,2118</text>
+    <circle cx="100" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="100" y="1225" text-anchor="middle" class="info-text" font-size="12">C3</text>
+
+    <circle cx="150" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="150" y="1225" text-anchor="middle" class="info-text" font-size="12">C4</text>
+
+    <circle cx="200" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="200" y="1225" text-anchor="middle" class="info-text" font-size="12">C5</text>
+
+    <circle cx="250" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="250" y="1225" text-anchor="middle" class="info-text" font-size="12">C6</text>
+
+    <!-- Row B (Y=1080, offset dari H = 1815) - ZONA B -->
+    <circle cx="0" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="0" y="1090" text-anchor="middle" class="info-text" font-size="12">B1</text>
+
+    <circle cx="50" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="50" y="1090" text-anchor="middle" class="info-text" font-size="12">B2</text>
+
+    <circle cx="100" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="100" y="1090" text-anchor="middle" class="info-text" font-size="12">B3</text>
+
+    <circle cx="150" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="150" y="1090" text-anchor="middle" class="info-text" font-size="12">B4</text>
+
+    <circle cx="200" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="200" y="1090" text-anchor="middle" class="info-text" font-size="12">B5</text>
+
+    <circle cx="250" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="250" y="1090" text-anchor="middle" class="info-text" font-size="12">B6</text>
+
+    <!-- Row A (Y=0, offset dari H = 2118) - ZONA B -->
+    <circle cx="0" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="0" y="10" text-anchor="middle" class="info-text" font-size="12">A1</text>
+
+    <circle cx="50" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="50" y="10" text-anchor="middle" class="info-text" font-size="12">A2</text>
+
+    <circle cx="100" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="100" y="10" text-anchor="middle" class="info-text" font-size="12">A3</text>
+
+    <circle cx="150" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="150" y="10" text-anchor="middle" class="info-text" font-size="12">A4</text>
+
+    <circle cx="200" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="200" y="10" text-anchor="middle" class="info-text" font-size="12">A5</text>
+
+    <circle cx="250" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="250" y="10" text-anchor="middle" class="info-text" font-size="12">A6</text>
+
   </g>
 
-  <!-- SECTION 2: Distance Annotations -->
-  <g id="distance-section" transform="translate(0, 2800)">
-    <text x="1200" y="0" text-anchor="middle" class="subtitle">PENJELASAN JARAK DAN DIMENSI</text>
+  <!-- LEGEND SECTION -->
+  <g id="legend" transform="translate(1600, 400)">
+    <rect x="0" y="0" width="1100" height="400" class="legend-box"/>
+    <text x="550" y="50" text-anchor="middle" class="subtitle">LEGENDA</text>
 
-    <!-- Horizontal Spacing Info -->
-    <rect x="100" y="80" width="1000" height="380" class="info-box"/>
-    <text x="600" y="130" text-anchor="middle" class="label-major">JARAK ANTAR KOLOM (Sumbu X)</text>
+    <!-- Home Marker -->
+    <circle cx="50" cy="110" r="15" class="home-marker"/>
+    <text x="100" y="120" class="info-text">🔴 HOME / Posisi Start (H1)</text>
 
-    <line x1="150" y1="200" x2="950" y2="200" class="dimension-line"/>
-    <polygon points="150,200 160,190 160,210" class="dimension-arrow"/>
-    <polygon points="950,200 940,190 940,210" class="dimension-arrow"/>
-    <text x="550" y="240" text-anchor="middle" class="label-distance">153.466 STEPS ≈ 153 steps</text>
+    <!-- Zona A -->
+    <circle cx="50" cy="180" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="100" y="190" class="info-text">🟢 ZONA A (Baris G-H)</text>
 
-    <text x="150" y="310" class="info-text">• Kolom 1 ke 2: 153 steps</text>
-    <text x="150" y="345" class="info-text">• Kolom 2 ke 3: 153 steps</text>
-    <text x="150" y="380" class="info-text">• Pola yang sama untuk semua kolom</text>
-    <text x="150" y="415" class="info-text">• Total X (H1 ke H6): 767 steps</text>
+    <!-- Zona B -->
+    <circle cx="50" cy="250" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="100" y="260" class="info-text">🟠 ZONA B (Baris A-D)</text>
 
-    <!-- Vertical Spacing Info -->
-    <rect x="1200" y="80" width="1000" height="380" class="info-box"/>
-    <text x="1700" y="130" text-anchor="middle" class="label-major">JARAK ANTAR BARIS (Sumbu Y)</text>
+    <!-- Neutral -->
+    <circle cx="50" cy="320" r="15" fill="#e8f4f8" stroke="#2c5aa0" stroke-width="2"/>
+    <text x="100" y="330" class="info-text">⚪ ZONA NETRAL (Baris E-F)</text>
 
-    <line x1="1250" y1="200" x2="1250" y2="350" class="dimension-line"/>
-    <polygon points="1250,200 1240,210 1260,210" class="dimension-arrow"/>
-    <polygon points="1250,350 1240,340 1260,340" class="dimension-arrow"/>
-    <text x="1400" y="285" text-anchor="middle" class="label-distance">302.619 STEPS</text>
-    <text x="1400" y="320" text-anchor="middle" class="label-distance">≈ 303 steps</text>
-
-    <text x="1250" y="380" class="info-text">• Baris H ke G: 303 steps</text>
-    <text x="1250" y="415" class="info-text">• Baris G ke F: 302 steps</text>
-
-    <!-- Total Dimensions -->
-    <rect x="100" y="520" width="2100" height="300" class="info-box"/>
-    <text x="1200" y="570" text-anchor="middle" class="label-major">DIMENSI TOTAL GRID</text>
-
-    <text x="150" y="640" class="info-text">📐 SUMBU X:</text>
-    <text x="200" y="680" class="info-text">• Dari 0 steps (Kolom 1) sampai 767 steps (Kolom 6)</text>
-    <text x="200" y="715" class="info-text">• Total Range: 767 steps (5 interval × 153.466 steps)</text>
-
-    <text x="1200" y="640" class="info-text">📐 SUMBU Y:</text>
-    <text x="1250" y="680" class="info-text">• Dari 0 steps (Baris H) sampai 2118 steps (Baris A)</text>
-    <text x="1250" y="715" class="info-text">• Total Range: 2118 steps (7 interval × 302.619 steps)</text>
   </g>
 
-  <!-- SECTION 3: Quick Reference Table -->
-  <g id="reference-section" transform="translate(0, 3160)">
-    <text x="1200" y="0" text-anchor="middle" class="subtitle">TABEL REFERENSI CEPAT - KOORDINAT SUMBU</text>
+  <!-- REFERENCE TABLE SECTION -->
+  <g id="reference" transform="translate(250, 2250)">
+    <text x="1200" y="0" text-anchor="middle" class="subtitle">TABEL KOORDINAT KARTESIUS - SEMUA TITIK PENYIRAMAN</text>
 
-    <!-- X Axis Values -->
-    <rect x="100" y="60" width="1050" height="240" class="info-box"/>
-    <text x="650" y="110" text-anchor="middle" class="label-major">NILAI X (KOLOM)</text>
+    <!-- Headers -->
+    <rect x="50" y="60" width="2300" height="50" fill="#333" stroke="#000" stroke-width="2"/>
+    <text x="150" y="95" class="info-text" fill="#fff" font-weight="bold">SEL</text>
+    <text x="280" y="95" class="info-text" fill="#fff" font-weight="bold">X (steps)</text>
+    <text x="450" y="95" class="info-text" fill="#fff" font-weight="bold">Y (steps)</text>
+    <text x="650" y="95" class="info-text" fill="#fff" font-weight="bold">SEL</text>
+    <text x="780" y="95" class="info-text" fill="#fff" font-weight="bold">X (steps)</text>
+    <text x="950" y="95" class="info-text" fill="#fff" font-weight="bold">Y (steps)</text>
+    <text x="1150" y="95" class="info-text" fill="#fff" font-weight="bold">SEL</text>
+    <text x="1280" y="95" class="info-text" fill="#fff" font-weight="bold">X (steps)</text>
+    <text x="1450" y="95" class="info-text" fill="#fff" font-weight="bold">Y (steps)</text>
+    <text x="1650" y="95" class="info-text" fill="#fff" font-weight="bold">SEL</text>
+    <text x="1780" y="95" class="info-text" fill="#fff" font-weight="bold">X (steps)</text>
+    <text x="1950" y="95" class="info-text" fill="#fff" font-weight="bold">Y (steps)</text>
+    <text x="2150" y="95" class="info-text" fill="#fff" font-weight="bold">SEL</text>
+    <text x="2280" y="95" class="info-text" fill="#fff" font-weight="bold">X (steps)</text>
 
-    <text x="130" y="160" class="info-text">Kolom 1: X = 0 steps</text>
-    <text x="130" y="200" class="info-text">Kolom 2: X = 153 steps</text>
-    <text x="130" y="240" class="info-text">Kolom 3: X = 307 steps</text>
+    <!-- Row H -->
+    <text x="150" y="155" class="info-text">H1</text>
+    <text x="280" y="155" class="info-text">0</text>
+    <text x="450" y="155" class="info-text">0</text>
+    <text x="650" y="155" class="info-text">H2</text>
+    <text x="780" y="155" class="info-text">153</text>
+    <text x="950" y="155" class="info-text">0</text>
+    <text x="1150" y="155" class="info-text">H3</text>
+    <text x="1280" y="155" class="info-text">307</text>
+    <text x="1450" y="155" class="info-text">0</text>
+    <text x="1650" y="155" class="info-text">H4</text>
+    <text x="1780" y="155" class="info-text">460</text>
+    <text x="1950" y="155" class="info-text">0</text>
+    <text x="2150" y="155" class="info-text">H5</text>
+    <text x="2280" y="155" class="info-text">614</text>
 
-    <text x="650" y="160" class="info-text">Kolom 4: X = 460 steps</text>
-    <text x="650" y="200" class="info-text">Kolom 5: X = 614 steps</text>
-    <text x="650" y="240" class="info-text">Kolom 6: X = 767 steps</text>
+    <!-- Row G -->
+    <text x="150" y="210" class="info-text">G1</text>
+    <text x="280" y="210" class="info-text">0</text>
+    <text x="450" y="210" class="info-text">303</text>
+    <text x="650" y="210" class="info-text">G2</text>
+    <text x="780" y="210" class="info-text">153</text>
+    <text x="950" y="210" class="info-text">303</text>
+    <text x="1150" y="210" class="info-text">G3</text>
+    <text x="1280" y="210" class="info-text">307</text>
+    <text x="1450" y="210" class="info-text">303</text>
+    <text x="1650" y="210" class="info-text">G4</text>
+    <text x="1780" y="210" class="info-text">460</text>
+    <text x="1950" y="210" class="info-text">303</text>
+    <text x="2150" y="210" class="info-text">G5</text>
+    <text x="2280" y="210" class="info-text">614</text>
 
-    <!-- Y Axis Values -->
-    <rect x="1200" y="60" width="1050" height="240" class="info-box"/>
-    <text x="1750" y="110" text-anchor="middle" class="label-major">NILAI Y (BARIS)</text>
+    <!-- Row F -->
+    <text x="150" y="265" class="info-text">F1</text>
+    <text x="280" y="265" class="info-text">0</text>
+    <text x="450" y="265" class="info-text">605</text>
+    <text x="650" y="265" class="info-text">F2</text>
+    <text x="780" y="265" class="info-text">153</text>
+    <text x="950" y="265" class="info-text">605</text>
+    <text x="1150" y="265" class="info-text">F3</text>
+    <text x="1280" y="265" class="info-text">307</text>
+    <text x="1450" y="265" class="info-text">605</text>
+    <text x="1650" y="265" class="info-text">F4</text>
+    <text x="1780" y="265" class="info-text">460</text>
+    <text x="1950" y="265" class="info-text">605</text>
+    <text x="2150" y="265" class="info-text">F5</text>
+    <text x="2280" y="265" class="info-text">614</text>
 
-    <text x="1230" y="160" class="info-text">Baris H: Y = 0 steps</text>
-    <text x="1230" y="200" class="info-text">Baris G: Y = 303 steps</text>
-    <text x="1230" y="240" class="info-text">Baris F: Y = 605 steps</text>
+    <!-- Row E -->
+    <text x="150" y="320" class="info-text">E1</text>
+    <text x="280" y="320" class="info-text">0</text>
+    <text x="450" y="320" class="info-text">908</text>
+    <text x="650" y="320" class="info-text">E2</text>
+    <text x="780" y="320" class="info-text">153</text>
+    <text x="950" y="320" class="info-text">908</text>
+    <text x="1150" y="320" class="info-text">E3</text>
+    <text x="1280" y="320" class="info-text">307</text>
+    <text x="1450" y="320" class="info-text">908</text>
+    <text x="1650" y="320" class="info-text">E4</text>
+    <text x="1780" y="320" class="info-text">460</text>
+    <text x="1950" y="320" class="info-text">908</text>
+    <text x="2150" y="320" class="info-text">E5</text>
+    <text x="2280" y="320" class="info-text">614</text>
 
-    <text x="1800" y="160" class="info-text">Baris E: Y = 908 steps</text>
-    <text x="1800" y="200" class="info-text">Baris D: Y = 1210 steps</text>
-    <text x="1800" y="240" class="info-text">Baris C: Y = 1512 steps</text>
+    <!-- Row D -->
+    <text x="150" y="375" class="info-text">D1</text>
+    <text x="280" y="375" class="info-text">0</text>
+    <text x="450" y="375" class="info-text">1210</text>
+    <text x="650" y="375" class="info-text">D2</text>
+    <text x="780" y="375" class="info-text">153</text>
+    <text x="950" y="375" class="info-text">1210</text>
+    <text x="1150" y="375" class="info-text">D3</text>
+    <text x="1280" y="375" class="info-text">307</text>
+    <text x="1450" y="375" class="info-text">1210</text>
+    <text x="1650" y="375" class="info-text">D4</text>
+    <text x="1780" y="375" class="info-text">460</text>
+    <text x="1950" y="375" class="info-text">1210</text>
+    <text x="2150" y="375" class="info-text">D5</text>
+    <text x="2280" y="375" class="info-text">614</text>
 
-    <text x="1230" y="280" class="info-text">Baris B: Y = 1815 steps</text>
-    <text x="1800" y="280" class="info-text">Baris A: Y = 2118 steps</text>
+    <!-- Row C -->
+    <text x="150" y="430" class="info-text">C1</text>
+    <text x="280" y="430" class="info-text">0</text>
+    <text x="450" y="430" class="info-text">1512</text>
+    <text x="650" y="430" class="info-text">C2</text>
+    <text x="780" y="430" class="info-text">153</text>
+    <text x="950" y="430" class="info-text">1512</text>
+    <text x="1150" y="430" class="info-text">C3</text>
+    <text x="1280" y="430" class="info-text">307</text>
+    <text x="1450" y="430" class="info-text">1512</text>
+    <text x="1650" y="430" class="info-text">C4</text>
+    <text x="1780" y="430" class="info-text">460</text>
+    <text x="1950" y="430" class="info-text">1512</text>
+    <text x="2150" y="430" class="info-text">C5</text>
+    <text x="2280" y="430" class="info-text">614</text>
+
+    <!-- Row B -->
+    <text x="150" y="485" class="info-text">B1</text>
+    <text x="280" y="485" class="info-text">0</text>
+    <text x="450" y="485" class="info-text">1815</text>
+    <text x="650" y="485" class="info-text">B2</text>
+    <text x="780" y="485" class="info-text">153</text>
+    <text x="950" y="485" class="info-text">1815</text>
+    <text x="1150" y="485" class="info-text">B3</text>
+    <text x="1280" y="485" class="info-text">307</text>
+    <text x="1450" y="485" class="info-text">1815</text>
+    <text x="1650" y="485" class="info-text">B4</text>
+    <text x="1780" y="485" class="info-text">460</text>
+    <text x="1950" y="485" class="info-text">1815</text>
+    <text x="2150" y="485" class="info-text">B5</text>
+    <text x="2280" y="485" class="info-text">614</text>
+
+    <!-- Row A -->
+    <text x="150" y="540" class="info-text">A1</text>
+    <text x="280" y="540" class="info-text">0</text>
+    <text x="450" y="540" class="info-text">2118</text>
+    <text x="650" y="540" class="info-text">A2</text>
+    <text x="780" y="540" class="info-text">153</text>
+    <text x="950" y="540" class="info-text">2118</text>
+    <text x="1150" y="540" class="info-text">A3</text>
+    <text x="1280" y="540" class="info-text">307</text>
+    <text x="1450" y="540" class="info-text">2118</text>
+    <text x="1650" y="540" class="info-text">A4</text>
+    <text x="1780" y="540" class="info-text">460</text>
+    <text x="1950" y="540" class="info-text">2118</text>
+    <text x="2150" y="540" class="info-text">A5</text>
+    <text x="2280" y="540" class="info-text">614</text>
   </g>
+
+  <!-- SUMMARY SECTION -->
+  <g id="summary" transform="translate(250, 3400)">
+    <rect x="0" y="0" width="2300" height="280" class="info-box"/>
+    <text x="1150" y="50" text-anchor="middle" class="subtitle">RINGKASAN INFORMASI SISTEM</text>
+
+    <text x="100" y="120" class="info-text" font-weight="bold">📍 TATA LETAK GRID:</text>
+    <text x="100" y="160" class="info-text">• Total Titik Penyiraman: 48 buah (6 kolom × 8 baris)</text>
+    <text x="100" y="195" class="info-text">• Jarak Antar Kolom (X): 153.466 steps (~153 steps)</text>
+    <text x="100" y="230" class="info-text">• Jarak Antar Baris (Y): 302.619 steps (~303 steps)</text>
+
+    <text x="1200" y="120" class="info-text" font-weight="bold">📐 DIMENSI TOTAL:</text>
+    <text x="1200" y="160" class="info-text">• Range X: 0 – 767 steps (5 interval)</text>
+    <text x="1200" y="195" class="info-text">• Range Y: 0 – 2118 steps (7 interval)</text>
+    <text x="1200" y="230" class="info-text">• HOME Position: H1 (0, 0) = titik referensi awal</text>
+  </g>
+
 </svg>
