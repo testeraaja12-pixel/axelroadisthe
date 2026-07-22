@@ -29,10 +29,10 @@
   <text x="1400" y="110" text-anchor="middle" class="subtitle">Grid 6×8 dengan Sumbu X-Y (Pengukuran dalam STEPS)</text>
 
   <!-- MAIN GRAPH SECTION -->
-  <g id="cartesian-graph" transform="translate(250, 180)">
+  <g id="cartesian-graph" transform="translate(350, 180)">
     
     <!-- Draw Grid Lines (Minor) -->
-    <!-- Vertical grid lines for X axis (every 153 steps) -->
+    <!-- Vertical grid lines for X axis -->
     <line x1="0" y1="0" x2="0" y2="1890" class="grid-line-minor"/>
     <line x1="50" y1="0" x2="50" y2="1890" class="grid-line-minor"/>
     <line x1="100" y1="0" x2="100" y2="1890" class="grid-line-minor"/>
@@ -46,7 +46,7 @@
     <line x1="500" y1="0" x2="500" y2="1890" class="grid-line-minor"/>
     <line x1="550" y1="0" x2="550" y2="1890" class="grid-line-minor"/>
 
-    <!-- Horizontal grid lines for Y axis (every 270 steps approx) -->
+    <!-- Horizontal grid lines for Y axis -->
     <line x1="0" y1="0" x2="550" y2="0" class="grid-line-minor"/>
     <line x1="0" y1="135" x2="550" y2="135" class="grid-line-minor"/>
     <line x1="0" y1="270" x2="550" y2="270" class="grid-line-minor"/>
@@ -108,22 +108,22 @@
 
     <!-- X Axis Ticks and Labels (0, 153, 307, 460, 614, 767) -->
     <line x1="0" y1="1890" x2="0" y2="1920" stroke="#000" stroke-width="2"/>
-    <text x="0" y="1960" text-anchor="middle" class="tick-label">0</text>
+    <text x="0" y="1970" text-anchor="middle" class="tick-label">0</text>
 
     <line x1="50" y1="1890" x2="50" y2="1920" stroke="#000" stroke-width="2"/>
-    <text x="50" y="1960" text-anchor="middle" class="tick-label">153</text>
+    <text x="50" y="1970" text-anchor="middle" class="tick-label">153</text>
 
     <line x1="100" y1="1890" x2="100" y2="1920" stroke="#000" stroke-width="2"/>
-    <text x="100" y="1960" text-anchor="middle" class="tick-label">307</text>
+    <text x="100" y="1970" text-anchor="middle" class="tick-label">307</text>
 
     <line x1="150" y1="1890" x2="150" y2="1920" stroke="#000" stroke-width="2"/>
-    <text x="150" y="1960" text-anchor="middle" class="tick-label">460</text>
+    <text x="150" y="1970" text-anchor="middle" class="tick-label">460</text>
 
     <line x1="200" y1="1890" x2="200" y2="1920" stroke="#000" stroke-width="2"/>
-    <text x="200" y="1960" text-anchor="middle" class="tick-label">614</text>
+    <text x="200" y="1970" text-anchor="middle" class="tick-label">614</text>
 
     <line x1="250" y1="1890" x2="250" y2="1920" stroke="#000" stroke-width="2"/>
-    <text x="250" y="1960" text-anchor="middle" class="tick-label">767</text>
+    <text x="250" y="1970" text-anchor="middle" class="tick-label">767</text>
 
     <!-- Y Axis Ticks and Labels (0, 303, 605, 908, 1210, 1512, 1815, 2118) -->
     <line x1="0" y1="1890" x2="-30" y2="1890" stroke="#000" stroke-width="2"/>
@@ -152,7 +152,7 @@
 
     <!-- Axis Labels -->
     <text x="575" y="1920" class="axis-label" fill="#000">X (steps)</text>
-    <text x="-150" y="30" class="axis-label" fill="#000">Y (steps)</text>
+    <text x="-200" y="50" class="axis-label" fill="#000">Y (steps)</text>
 
     <!-- Plot Points for All 48 Cells -->
     <!-- Row H (Y=1890, Baris H y-offset=0) -->
@@ -181,7 +181,7 @@
     <circle cx="250" cy="1890" r="15" class="grid-cell-zona-a" stroke="#2c5aa0" stroke-width="2"/>
     <text x="250" y="1900" text-anchor="middle" class="info-text" font-size="12">H6</text>
 
-    <!-- Row G (Y=1755, offset dari H = 303) - ZONA A -->
+    <!-- Row G (Y=1755, offset dari H = 135) - ZONA A -->
     <!-- G1 (0, 303) -->
     <circle cx="0" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
     <text x="0" y="1765" text-anchor="middle" class="info-text" font-size="12">G1</text>
@@ -206,7 +206,7 @@
     <circle cx="250" cy="1755" r="15" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
     <text x="250" y="1765" text-anchor="middle" class="info-text" font-size="12">G6</text>
 
-    <!-- Row F (Y=1620, offset dari H = 605) -->
+    <!-- Row F (Y=1620, offset dari H = 270) -->
     <!-- F1 (0, 605) -->
     <circle cx="0" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
     <text x="0" y="1630" text-anchor="middle" class="info-text" font-size="12">F1</text>
@@ -227,7 +227,7 @@
     <circle cx="250" cy="1620" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
     <text x="250" y="1630" text-anchor="middle" class="info-text" font-size="12">F6</text>
 
-    <!-- Row E (Y=1485, offset dari H = 908) -->
+    <!-- Row E (Y=1485, offset dari H = 405) -->
     <circle cx="0" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
     <text x="0" y="1495" text-anchor="middle" class="info-text" font-size="12">E1</text>
 
@@ -246,7 +246,7 @@
     <circle cx="250" cy="1485" r="15" class="grid-cell" stroke="#2c5aa0" stroke-width="2"/>
     <text x="250" y="1495" text-anchor="middle" class="info-text" font-size="12">E6</text>
 
-    <!-- Row D (Y=1350, offset dari H = 1210) - ZONA B -->
+    <!-- Row D (Y=1350, offset dari H = 540) - ZONA B -->
     <circle cx="0" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
     <text x="0" y="1360" text-anchor="middle" class="info-text" font-size="12">D1</text>
 
@@ -265,7 +265,7 @@
     <circle cx="250" cy="1350" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
     <text x="250" y="1360" text-anchor="middle" class="info-text" font-size="12">D6</text>
 
-    <!-- Row C (Y=1215, offset dari H = 1512) - ZONA B -->
+    <!-- Row C (Y=1215, offset dari H = 675) - ZONA B -->
     <circle cx="0" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
     <text x="0" y="1225" text-anchor="middle" class="info-text" font-size="12">C1</text>
 
@@ -284,7 +284,7 @@
     <circle cx="250" cy="1215" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
     <text x="250" y="1225" text-anchor="middle" class="info-text" font-size="12">C6</text>
 
-    <!-- Row B (Y=1080, offset dari H = 1815) - ZONA B -->
+    <!-- Row B (Y=1080, offset dari H = 810) - ZONA B -->
     <circle cx="0" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
     <text x="0" y="1090" text-anchor="middle" class="info-text" font-size="12">B1</text>
 
@@ -303,24 +303,24 @@
     <circle cx="250" cy="1080" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
     <text x="250" y="1090" text-anchor="middle" class="info-text" font-size="12">B6</text>
 
-    <!-- Row A (Y=0, offset dari H = 2118) - ZONA B -->
-    <circle cx="0" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
-    <text x="0" y="10" text-anchor="middle" class="info-text" font-size="12">A1</text>
+    <!-- Row A (Y=945, offset dari H = 945) - ZONA B -->
+    <circle cx="0" cy="945" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="0" y="955" text-anchor="middle" class="info-text" font-size="12">A1</text>
 
-    <circle cx="50" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
-    <text x="50" y="10" text-anchor="middle" class="info-text" font-size="12">A2</text>
+    <circle cx="50" cy="945" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="50" y="955" text-anchor="middle" class="info-text" font-size="12">A2</text>
 
-    <circle cx="100" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
-    <text x="100" y="10" text-anchor="middle" class="info-text" font-size="12">A3</text>
+    <circle cx="100" cy="945" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="100" y="955" text-anchor="middle" class="info-text" font-size="12">A3</text>
 
-    <circle cx="150" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
-    <text x="150" y="10" text-anchor="middle" class="info-text" font-size="12">A4</text>
+    <circle cx="150" cy="945" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="150" y="955" text-anchor="middle" class="info-text" font-size="12">A4</text>
 
-    <circle cx="200" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
-    <text x="200" y="10" text-anchor="middle" class="info-text" font-size="12">A5</text>
+    <circle cx="200" cy="945" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="200" y="955" text-anchor="middle" class="info-text" font-size="12">A5</text>
 
-    <circle cx="250" cy="0" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
-    <text x="250" y="10" text-anchor="middle" class="info-text" font-size="12">A6</text>
+    <circle cx="250" cy="945" r="15" fill="#ffe0b2" stroke="#ef6c00" stroke-width="2"/>
+    <text x="250" y="955" text-anchor="middle" class="info-text" font-size="12">A6</text>
 
   </g>
 
