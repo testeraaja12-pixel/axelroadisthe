@@ -1,0 +1,338 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="3600" viewBox="0 0 2400 3600">
+  <defs>
+    <style>
+      .title { font-size: 48px; font-weight: bold; fill: #1a1a1a; }
+      .subtitle { font-size: 32px; fill: #333; font-weight: bold; }
+      .label-major { font-size: 28px; fill: #000; font-weight: bold; }
+      .label-coord { font-size: 20px; fill: #0066cc; font-weight: bold; }
+      .label-cell { font-size: 24px; fill: #fff; font-weight: bold; }
+      .label-distance { font-size: 18px; fill: #ff6600; font-weight: bold; }
+      .grid-cell { fill: #e8f4f8; stroke: #2c5aa0; stroke-width: 2; }
+      .grid-cell-zona-a { fill: #c8e6c9; stroke: #2e7d32; stroke-width: 2; }
+      .grid-cell-zona-b { fill: #ffe0b2; stroke: #ef6c00; stroke-width: 2; }
+      .axis-line { stroke: #333; stroke-width: 3; }
+      .grid-line { stroke: #ccc; stroke-width: 1; stroke-dasharray: 5,5; }
+      .dimension-line { stroke: #ff6600; stroke-width: 2; }
+      .dimension-arrow { fill: #ff6600; }
+      .info-box { fill: #f0f0f0; stroke: #333; stroke-width: 2; }
+      .info-text { font-size: 20px; fill: #000; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="2400" height="3600" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="1200" y="60" text-anchor="middle" class="title">PETA KOORDINAT PENYIRAMAN GANTRY OTOMATIS</text>
+  <text x="1200" y="110" text-anchor="middle" class="subtitle">SICS Gantry Watering V2.0 - Grid 6×8 (48 Titik)</text>
+
+  <!-- SECTION 1: Grid Map with Coordinates -->
+  <g id="grid-section">
+    <!-- Left margin for row labels -->
+    <text x="40" y="250" class="label-major">BARIS</text>
+
+    <!-- Row Labels (H to A from top to bottom) -->
+    <text x="80" y="615" text-anchor="end" class="label-major">H</text>
+    <text x="80" y="885" text-anchor="end" class="label-major">G</text>
+    <text x="80" y="1155" text-anchor="end" class="label-major">F</text>
+    <text x="80" y="1425" text-anchor="end" class="label-major">E</text>
+    <text x="80" y="1695" text-anchor="end" class="label-major">D</text>
+    <text x="80" y="1965" text-anchor="end" class="label-major">C</text>
+    <text x="80" y="2235" text-anchor="end" class="label-major">B</text>
+    <text x="80" y="2505" text-anchor="end" class="label-major">A</text>
+
+    <!-- Column Labels (1 to 6) -->
+    <text x="200" y="2650" text-anchor="middle" class="label-major">1</text>
+    <text x="470" y="2650" text-anchor="middle" class="label-major">2</text>
+    <text x="740" y="2650" text-anchor="middle" class="label-major">3</text>
+    <text x="1010" y="2650" text-anchor="middle" class="label-major">4</text>
+    <text x="1280" y="2650" text-anchor="middle" class="label-major">5</text>
+    <text x="1550" y="2650" text-anchor="middle" class="label-major">6</text>
+
+    <text x="875" y="2710" text-anchor="middle" class="label-major">KOLOM</text>
+
+    <!-- Zona A Label (Top Green) -->
+    <text x="1850" y="620" class="label-major" fill="#2e7d32">ZONA A</text>
+    <text x="1850" y="660" class="info-text" fill="#2e7d32">(Baris G-H)</text>
+
+    <!-- Zona B Label (Bottom Orange) -->
+    <text x="1850" y="2000" class="label-major" fill="#ef6c00">ZONA B</text>
+    <text x="1850" y="2040" class="info-text" fill="#ef6c00">(Baris A-D)</text>
+
+    <!-- Grid Cells with Coordinates - Row H (Y=0) -->
+    <rect x="150" y="550" width="260" height="130" class="grid-cell"/>
+    <text x="280" y="605" text-anchor="middle" class="label-cell">H1</text>
+    <text x="280" y="645" text-anchor="middle" class="label-coord" font-size="16">0,0</text>
+
+    <rect x="420" y="550" width="260" height="130" class="grid-cell"/>
+    <text x="550" y="605" text-anchor="middle" class="label-cell">H2</text>
+    <text x="550" y="645" text-anchor="middle" class="label-coord" font-size="16">153,0</text>
+
+    <rect x="690" y="550" width="260" height="130" class="grid-cell"/>
+    <text x="820" y="605" text-anchor="middle" class="label-cell">H3</text>
+    <text x="820" y="645" text-anchor="middle" class="label-coord" font-size="16">307,0</text>
+
+    <rect x="960" y="550" width="260" height="130" class="grid-cell"/>
+    <text x="1090" y="605" text-anchor="middle" class="label-cell">H4</text>
+    <text x="1090" y="645" text-anchor="middle" class="label-coord" font-size="16">460,0</text>
+
+    <rect x="1230" y="550" width="260" height="130" class="grid-cell"/>
+    <text x="1360" y="605" text-anchor="middle" class="label-cell">H5</text>
+    <text x="1360" y="645" text-anchor="middle" class="label-coord" font-size="16">614,0</text>
+
+    <rect x="1500" y="550" width="260" height="130" class="grid-cell"/>
+    <text x="1630" y="605" text-anchor="middle" class="label-cell">H6</text>
+    <text x="1630" y="645" text-anchor="middle" class="label-coord" font-size="16">767,0</text>
+
+    <!-- Grid Cells - Row G (Y=303) ZONA A -->
+    <rect x="150" y="820" width="260" height="130" class="grid-cell-zona-a"/>
+    <text x="280" y="875" text-anchor="middle" class="label-cell">G1</text>
+    <text x="280" y="915" text-anchor="middle" class="label-coord" font-size="16">0,303</text>
+
+    <rect x="420" y="820" width="260" height="130" class="grid-cell-zona-a"/>
+    <text x="550" y="875" text-anchor="middle" class="label-cell">G2</text>
+    <text x="550" y="915" text-anchor="middle" class="label-coord" font-size="16">153,303</text>
+
+    <rect x="690" y="820" width="260" height="130" class="grid-cell-zona-a"/>
+    <text x="820" y="875" text-anchor="middle" class="label-cell">G3</text>
+    <text x="820" y="915" text-anchor="middle" class="label-coord" font-size="16">307,303</text>
+
+    <rect x="960" y="820" width="260" height="130" class="grid-cell-zona-a"/>
+    <text x="1090" y="875" text-anchor="middle" class="label-cell">G4</text>
+    <text x="1090" y="915" text-anchor="middle" class="label-coord" font-size="16">460,303</text>
+
+    <rect x="1230" y="820" width="260" height="130" class="grid-cell-zona-a"/>
+    <text x="1360" y="875" text-anchor="middle" class="label-cell">G5</text>
+    <text x="1360" y="915" text-anchor="middle" class="label-coord" font-size="16">614,303</text>
+
+    <rect x="1500" y="820" width="260" height="130" class="grid-cell-zona-a"/>
+    <text x="1630" y="875" text-anchor="middle" class="label-cell">G6</text>
+    <text x="1630" y="915" text-anchor="middle" class="label-coord" font-size="16">767,303</text>
+
+    <!-- Grid Cells - Row F (Y=605) -->
+    <rect x="150" y="1090" width="260" height="130" class="grid-cell"/>
+    <text x="280" y="1145" text-anchor="middle" class="label-cell">F1</text>
+    <text x="280" y="1185" text-anchor="middle" class="label-coord" font-size="16">0,605</text>
+
+    <rect x="420" y="1090" width="260" height="130" class="grid-cell"/>
+    <text x="550" y="1145" text-anchor="middle" class="label-cell">F2</text>
+    <text x="550" y="1185" text-anchor="middle" class="label-coord" font-size="16">153,605</text>
+
+    <rect x="690" y="1090" width="260" height="130" class="grid-cell"/>
+    <text x="820" y="1145" text-anchor="middle" class="label-cell">F3</text>
+    <text x="820" y="1185" text-anchor="middle" class="label-coord" font-size="16">307,605</text>
+
+    <rect x="960" y="1090" width="260" height="130" class="grid-cell"/>
+    <text x="1090" y="1145" text-anchor="middle" class="label-cell">F4</text>
+    <text x="1090" y="1185" text-anchor="middle" class="label-coord" font-size="16">460,605</text>
+
+    <rect x="1230" y="1090" width="260" height="130" class="grid-cell"/>
+    <text x="1360" y="1145" text-anchor="middle" class="label-cell">F5</text>
+    <text x="1360" y="1185" text-anchor="middle" class="label-coord" font-size="16">614,605</text>
+
+    <rect x="1500" y="1090" width="260" height="130" class="grid-cell"/>
+    <text x="1630" y="1145" text-anchor="middle" class="label-cell">F6</text>
+    <text x="1630" y="1185" text-anchor="middle" class="label-coord" font-size="16">767,605</text>
+
+    <!-- Grid Cells - Row E (Y=908) -->
+    <rect x="150" y="1360" width="260" height="130" class="grid-cell"/>
+    <text x="280" y="1415" text-anchor="middle" class="label-cell">E1</text>
+    <text x="280" y="1455" text-anchor="middle" class="label-coord" font-size="16">0,908</text>
+
+    <rect x="420" y="1360" width="260" height="130" class="grid-cell"/>
+    <text x="550" y="1415" text-anchor="middle" class="label-cell">E2</text>
+    <text x="550" y="1455" text-anchor="middle" class="label-coord" font-size="16">153,908</text>
+
+    <rect x="690" y="1360" width="260" height="130" class="grid-cell"/>
+    <text x="820" y="1415" text-anchor="middle" class="label-cell">E3</text>
+    <text x="820" y="1455" text-anchor="middle" class="label-coord" font-size="16">307,908</text>
+
+    <rect x="960" y="1360" width="260" height="130" class="grid-cell"/>
+    <text x="1090" y="1415" text-anchor="middle" class="label-cell">E4</text>
+    <text x="1090" y="1455" text-anchor="middle" class="label-coord" font-size="16">460,908</text>
+
+    <rect x="1230" y="1360" width="260" height="130" class="grid-cell"/>
+    <text x="1360" y="1415" text-anchor="middle" class="label-cell">E5</text>
+    <text x="1360" y="1455" text-anchor="middle" class="label-coord" font-size="16">614,908</text>
+
+    <rect x="1500" y="1360" width="260" height="130" class="grid-cell"/>
+    <text x="1630" y="1415" text-anchor="middle" class="label-cell">E6</text>
+    <text x="1630" y="1455" text-anchor="middle" class="label-coord" font-size="16">767,908</text>
+
+    <!-- Grid Cells - Row D (Y=1210) ZONA B -->
+    <rect x="150" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="280" y="1685" text-anchor="middle" class="label-cell">D1</text>
+    <text x="280" y="1725" text-anchor="middle" class="label-coord" font-size="16">0,1210</text>
+
+    <rect x="420" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="550" y="1685" text-anchor="middle" class="label-cell">D2</text>
+    <text x="550" y="1725" text-anchor="middle" class="label-coord" font-size="16">153,1210</text>
+
+    <rect x="690" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="820" y="1685" text-anchor="middle" class="label-cell">D3</text>
+    <text x="820" y="1725" text-anchor="middle" class="label-coord" font-size="16">307,1210</text>
+
+    <rect x="960" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1090" y="1685" text-anchor="middle" class="label-cell">D4</text>
+    <text x="1090" y="1725" text-anchor="middle" class="label-coord" font-size="16">460,1210</text>
+
+    <rect x="1230" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1360" y="1685" text-anchor="middle" class="label-cell">D5</text>
+    <text x="1360" y="1725" text-anchor="middle" class="label-coord" font-size="16">614,1210</text>
+
+    <rect x="1500" y="1630" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1630" y="1685" text-anchor="middle" class="label-cell">D6</text>
+    <text x="1630" y="1725" text-anchor="middle" class="label-coord" font-size="16">767,1210</text>
+
+    <!-- Grid Cells - Row C (Y=1512) ZONA B -->
+    <rect x="150" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="280" y="1955" text-anchor="middle" class="label-cell">C1</text>
+    <text x="280" y="1995" text-anchor="middle" class="label-coord" font-size="16">0,1512</text>
+
+    <rect x="420" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="550" y="1955" text-anchor="middle" class="label-cell">C2</text>
+    <text x="550" y="1995" text-anchor="middle" class="label-coord" font-size="16">153,1512</text>
+
+    <rect x="690" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="820" y="1955" text-anchor="middle" class="label-cell">C3</text>
+    <text x="820" y="1995" text-anchor="middle" class="label-coord" font-size="16">307,1512</text>
+
+    <rect x="960" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1090" y="1955" text-anchor="middle" class="label-cell">C4</text>
+    <text x="1090" y="1995" text-anchor="middle" class="label-coord" font-size="16">460,1512</text>
+
+    <rect x="1230" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1360" y="1955" text-anchor="middle" class="label-cell">C5</text>
+    <text x="1360" y="1995" text-anchor="middle" class="label-coord" font-size="16">614,1512</text>
+
+    <rect x="1500" y="1900" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1630" y="1955" text-anchor="middle" class="label-cell">C6</text>
+    <text x="1630" y="1995" text-anchor="middle" class="label-coord" font-size="16">767,1512</text>
+
+    <!-- Grid Cells - Row B (Y=1815) ZONA B -->
+    <rect x="150" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="280" y="2225" text-anchor="middle" class="label-cell">B1</text>
+    <text x="280" y="2265" text-anchor="middle" class="label-coord" font-size="16">0,1815</text>
+
+    <rect x="420" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="550" y="2225" text-anchor="middle" class="label-cell">B2</text>
+    <text x="550" y="2265" text-anchor="middle" class="label-coord" font-size="16">153,1815</text>
+
+    <rect x="690" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="820" y="2225" text-anchor="middle" class="label-cell">B3</text>
+    <text x="820" y="2265" text-anchor="middle" class="label-coord" font-size="16">307,1815</text>
+
+    <rect x="960" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1090" y="2225" text-anchor="middle" class="label-cell">B4</text>
+    <text x="1090" y="2265" text-anchor="middle" class="label-coord" font-size="16">460,1815</text>
+
+    <rect x="1230" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1360" y="2225" text-anchor="middle" class="label-cell">B5</text>
+    <text x="1360" y="2265" text-anchor="middle" class="label-coord" font-size="16">614,1815</text>
+
+    <rect x="1500" y="2170" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1630" y="2225" text-anchor="middle" class="label-cell">B6</text>
+    <text x="1630" y="2265" text-anchor="middle" class="label-coord" font-size="16">767,1815</text>
+
+    <!-- Grid Cells - Row A (Y=2118) ZONA B -->
+    <rect x="150" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="280" y="2495" text-anchor="middle" class="label-cell">A1</text>
+    <text x="280" y="2535" text-anchor="middle" class="label-coord" font-size="16">0,2118</text>
+
+    <rect x="420" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="550" y="2495" text-anchor="middle" class="label-cell">A2</text>
+    <text x="550" y="2535" text-anchor="middle" class="label-coord" font-size="16">153,2118</text>
+
+    <rect x="690" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="820" y="2495" text-anchor="middle" class="label-cell">A3</text>
+    <text x="820" y="2535" text-anchor="middle" class="label-coord" font-size="16">307,2118</text>
+
+    <rect x="960" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1090" y="2495" text-anchor="middle" class="label-cell">A4</text>
+    <text x="1090" y="2535" text-anchor="middle" class="label-coord" font-size="16">460,2118</text>
+
+    <rect x="1230" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1360" y="2495" text-anchor="middle" class="label-cell">A5</text>
+    <text x="1360" y="2535" text-anchor="middle" class="label-coord" font-size="16">614,2118</text>
+
+    <rect x="1500" y="2440" width="260" height="130" class="grid-cell-zona-b"/>
+    <text x="1630" y="2495" text-anchor="middle" class="label-cell">A6</text>
+    <text x="1630" y="2535" text-anchor="middle" class="label-coord" font-size="16">767,2118</text>
+  </g>
+
+  <!-- SECTION 2: Distance Annotations -->
+  <g id="distance-section" transform="translate(0, 2800)">
+    <text x="1200" y="0" text-anchor="middle" class="subtitle">PENJELASAN JARAK DAN DIMENSI</text>
+
+    <!-- Horizontal Spacing Info -->
+    <rect x="100" y="80" width="1000" height="380" class="info-box"/>
+    <text x="600" y="130" text-anchor="middle" class="label-major">JARAK ANTAR KOLOM (Sumbu X)</text>
+
+    <line x1="150" y1="200" x2="950" y2="200" class="dimension-line"/>
+    <polygon points="150,200 160,190 160,210" class="dimension-arrow"/>
+    <polygon points="950,200 940,190 940,210" class="dimension-arrow"/>
+    <text x="550" y="240" text-anchor="middle" class="label-distance">153.466 STEPS ≈ 153 steps</text>
+
+    <text x="150" y="310" class="info-text">• Kolom 1 ke 2: 153 steps</text>
+    <text x="150" y="345" class="info-text">• Kolom 2 ke 3: 153 steps</text>
+    <text x="150" y="380" class="info-text">• Pola yang sama untuk semua kolom</text>
+    <text x="150" y="415" class="info-text">• Total X (H1 ke H6): 767 steps</text>
+
+    <!-- Vertical Spacing Info -->
+    <rect x="1200" y="80" width="1000" height="380" class="info-box"/>
+    <text x="1700" y="130" text-anchor="middle" class="label-major">JARAK ANTAR BARIS (Sumbu Y)</text>
+
+    <line x1="1250" y1="200" x2="1250" y2="350" class="dimension-line"/>
+    <polygon points="1250,200 1240,210 1260,210" class="dimension-arrow"/>
+    <polygon points="1250,350 1240,340 1260,340" class="dimension-arrow"/>
+    <text x="1400" y="285" text-anchor="middle" class="label-distance">302.619 STEPS</text>
+    <text x="1400" y="320" text-anchor="middle" class="label-distance">≈ 303 steps</text>
+
+    <text x="1250" y="380" class="info-text">• Baris H ke G: 303 steps</text>
+    <text x="1250" y="415" class="info-text">• Baris G ke F: 302 steps</text>
+
+    <!-- Total Dimensions -->
+    <rect x="100" y="520" width="2100" height="300" class="info-box"/>
+    <text x="1200" y="570" text-anchor="middle" class="label-major">DIMENSI TOTAL GRID</text>
+
+    <text x="150" y="640" class="info-text">📐 SUMBU X:</text>
+    <text x="200" y="680" class="info-text">• Dari 0 steps (Kolom 1) sampai 767 steps (Kolom 6)</text>
+    <text x="200" y="715" class="info-text">• Total Range: 767 steps (5 interval × 153.466 steps)</text>
+
+    <text x="1200" y="640" class="info-text">📐 SUMBU Y:</text>
+    <text x="1250" y="680" class="info-text">• Dari 0 steps (Baris H) sampai 2118 steps (Baris A)</text>
+    <text x="1250" y="715" class="info-text">• Total Range: 2118 steps (7 interval × 302.619 steps)</text>
+  </g>
+
+  <!-- SECTION 3: Quick Reference Table -->
+  <g id="reference-section" transform="translate(0, 3160)">
+    <text x="1200" y="0" text-anchor="middle" class="subtitle">TABEL REFERENSI CEPAT - KOORDINAT SUMBU</text>
+
+    <!-- X Axis Values -->
+    <rect x="100" y="60" width="1050" height="240" class="info-box"/>
+    <text x="650" y="110" text-anchor="middle" class="label-major">NILAI X (KOLOM)</text>
+
+    <text x="130" y="160" class="info-text">Kolom 1: X = 0 steps</text>
+    <text x="130" y="200" class="info-text">Kolom 2: X = 153 steps</text>
+    <text x="130" y="240" class="info-text">Kolom 3: X = 307 steps</text>
+
+    <text x="650" y="160" class="info-text">Kolom 4: X = 460 steps</text>
+    <text x="650" y="200" class="info-text">Kolom 5: X = 614 steps</text>
+    <text x="650" y="240" class="info-text">Kolom 6: X = 767 steps</text>
+
+    <!-- Y Axis Values -->
+    <rect x="1200" y="60" width="1050" height="240" class="info-box"/>
+    <text x="1750" y="110" text-anchor="middle" class="label-major">NILAI Y (BARIS)</text>
+
+    <text x="1230" y="160" class="info-text">Baris H: Y = 0 steps</text>
+    <text x="1230" y="200" class="info-text">Baris G: Y = 303 steps</text>
+    <text x="1230" y="240" class="info-text">Baris F: Y = 605 steps</text>
+
+    <text x="1800" y="160" class="info-text">Baris E: Y = 908 steps</text>
+    <text x="1800" y="200" class="info-text">Baris D: Y = 1210 steps</text>
+    <text x="1800" y="240" class="info-text">Baris C: Y = 1512 steps</text>
+
+    <text x="1230" y="280" class="info-text">Baris B: Y = 1815 steps</text>
+    <text x="1800" y="280" class="info-text">Baris A: Y = 2118 steps</text>
+  </g>
+</svg>
